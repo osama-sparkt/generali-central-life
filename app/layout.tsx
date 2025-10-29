@@ -1,18 +1,28 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
+// ✅ Metadata (only for SEO + manifest)
 export const metadata: Metadata = {
   title: "Celebrating New Beginnings with Generali Center",
   description: "Take and share photos with Generali branding",
   manifest: "/manifest.json",
-  themeColor: "#ca140f",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
+
+// ✅ Viewport config (moved out of metadata)
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+}
+
+// ✅ Theme color config (moved out of metadata)
+export const themeColor = "#ca140f"
 
 export default function RootLayout({
   children,
@@ -23,7 +33,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
         <meta name="mobile-web-app-capable" content="yes" />
         <link rel="apple-touch-icon" href="/placeholder-logo.png" />
       </head>

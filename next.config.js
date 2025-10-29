@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    appDir: true,
+    allowedDevOrigins: [
+      "http://192.168.1.160:3001", // your LAN IP + port
+      "http://localhost:3001",     // still allow localhost
+    ],
   },
   eslint: {
     ignoreDuringBuilds: true,
@@ -10,7 +13,6 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ["placeholder.svg"],
     unoptimized: true,
   },
 }

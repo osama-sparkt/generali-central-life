@@ -752,7 +752,7 @@ export default function CameraApp() {
       console.warn("Overlay image failed to load");
       setOverlayLoaded(true); // Continue without overlay
     };
-    img.src = "/overlay.png";
+    img.src = "/GeneraliOverlay.png";
   }, []);
 
   // Check for multiple cameras
